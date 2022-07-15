@@ -54,6 +54,9 @@ export function CyclesContextProvider({
         }
       }),
     )
+
+    setActiveCycleId(null)
+    document.title = 'Ignite Timer'
   }
 
   function createNewCycle(data: CreateCycleData) {
@@ -68,8 +71,6 @@ export function CyclesContextProvider({
     setActiveCycleId(newCycle.id)
     setAmountSecondsPassed(0)
     // setCycles((state) => [...state, newCycle]) // Quando dependo do estado anterior
-
-    // reset()
   }
 
   function interruptCurrentCycle() {
@@ -84,6 +85,7 @@ export function CyclesContextProvider({
     )
 
     setActiveCycleId(null)
+    document.title = 'Ignite Timer'
   }
 
   return (
